@@ -24,7 +24,7 @@
 # # Chamando a função para criar a interface
 # caminho_selecionado = criar_interface()
 # print(f"Caminho retornado: {caminho_selecionado}")
-
+#
 import customtkinter
 
 app = customtkinter.CTk()

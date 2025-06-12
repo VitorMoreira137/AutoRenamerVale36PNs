@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3741ddca-266c-4156-b9cc-0268c387ba4f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tab_implement.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main2.py" beforeDir="false" afterPath="$PROJECT_DIR$/main2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tab_implement.py" beforeDir="false" afterPath="$PROJECT_DIR$/tab_implement.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste_backup/DF-DI-2930KF-J-50030-J-00000_Ref00.dxf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste_backup/DF-DI-2930KF-J-50030-J-00000_Ref02.dxf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste_backup/DF-DI-2930KF-J-50030-J-00000_Ref03.dxf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste_backup/DF-DI-2930KF-J-50030-J-00000_Ref04.dxf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste_backup/DF-DI-2930KF-J-50030-J-00000_Ref05.dxf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +49,7 @@
   "keyToString": {
     "Python.main.executor": "Run",
     "Python.main2.executor": "Run",
+    "Python.tab_implement.executor": "Run",
     "Python.test.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
