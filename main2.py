@@ -1,4 +1,3 @@
-import tkinter as ctk
 from tkinter import *
 from tkinter import filedialog
 import customtkinter as ctk
@@ -23,8 +22,8 @@ def interface_editar_carimbo():
     janela = ctk.CTk()  # Cria uma janela
     janela.iconbitmap(resource_path("logo-wbt.ico"))
     janela.title('Edição de Carimbos - VALE EFVM')  # Atribui um título
-    janela.geometry('700x400')  # Define as dimensões da janela
-    janela.wm_attributes('-topmost', 1)  # ATRIBUIR MINHA JANELA PARA SOBREPOR OS ELEMENTOS DA TELA
+    janela.geometry('750x400')  # Define as dimensões da janela
+    # janela.wm_attributes('-topmost', 1)  # ATRIBUIR MINHA JANELA PARA SOBREPOR OS ELEMENTOS DA TELA
 
     var1 = ctk.StringVar()  # Armazena o que usuário digitar
     var2 = ctk.StringVar()
@@ -54,12 +53,12 @@ def interface_editar_carimbo():
             EB5.configure(state=DISABLED, fg_color="grey")
 
         elif var6.get() == 4:
-            EA1.configure(state=NORMAL)
-            EA2.configure(state=NORMAL)
+            EA1.configure(state=NORMAL, fg_color="white")
+            EA2.configure(state=NORMAL, fg_color="white")
             EA2.delete(0, END)  # apaga o conteudo do CTkEntry EA2
-            EA3.configure(state=NORMAL)
-            EA4.configure(state=NORMAL)
-            EA5.configure(state=NORMAL)
+            EA3.configure(state=NORMAL, fg_color="white")
+            EA4.configure(state=NORMAL, fg_color="white")
+            EA5.configure(state=NORMAL, fg_color="white")
             EB1.configure(state=NORMAL, fg_color="white")
             EB2.configure(state=NORMAL, fg_color="white")
             EB3.configure(state=NORMAL, fg_color="white")
@@ -72,58 +71,56 @@ def interface_editar_carimbo():
         elif var6.get() == 4:
             return FALSE
 
-    B0 = ctk.CTkButton(janela, text="Selecionar Pasta", width=70, command=lambda: var7.set(selecionar_pasta_PROJETO()))
-    B0.grid(row=0, column=3, sticky=ctk.W, pady=4)
+    B0 = ctk.CTkButton(janela, text="Selecionar Pasta 📁", width=70, command=lambda: var7.set(selecionar_pasta_PROJETO()))
+    B0.grid(row=0, column=0, sticky=ctk.W, padx=10, pady=10)
 
     R0 = ctk.CTkRadioButton(janela, text="Emissão Inicial", variable=var6, value=3, command=lambda: [desabilitar_controle(), firstProjectChecker()])
-    R0.grid(row=0, column=0)
+    R0.grid(row=1, column=0)
 
     R1 = ctk.CTkRadioButton(janela, text="Emissão Existente", variable=var6, value=4, command=lambda: [desabilitar_controle(), firstProjectChecker()])
-    R1.grid(row=0, column=1)
+    R1.grid(row=1, column=1)
 
-    ctk.CTkLabel(janela, text="EMISSÃO ATUAL", text_color="#4287f5").grid(row=1, column=0, sticky=ctk.W)  # Cria um CTkLabel
-    ctk.CTkLabel(janela, text="EMISSÃO FUTURA", text_color="#4287f5").grid(row=1, column=3)  # Cria um CTkLabel
+    ctk.CTkLabel(janela, text="EMISSÃO ATUAL", text_color="#4287f5").grid(row=2, column=1, sticky=ctk.W, padx=25)  # Cria um CTkLabel
+    ctk.CTkLabel(janela, text="EMISSÃO FUTURA", text_color="#4287f5").grid(row=2, column=3)  # Cria um CTkLabel
 
-    ctk.CTkLabel(janela, text="KM da PN:").grid(row=2, sticky=ctk.W)  # Cria um CTkLabel
-
+    ctk.CTkLabel(janela, text="KM da PN:").grid(row=3, sticky=ctk.W, padx=25)  # Cria um CTkLabel
     EA1 = ctk.CTkEntry(janela, textvariable=var1, width=200, fg_color="white", text_color="blue")  # cria um input box e salva o que o usuário digitou
-    EA1.grid(row=2, column=1, sticky=ctk.W)
+    EA1.grid(row=3, column=1, sticky=ctk.W)
 
-    ctk.CTkLabel(janela, text="Revisão do Projeto:").grid(row=4, sticky=ctk.W)  # Cria um CTkLabel
-
+    ctk.CTkLabel(janela, text="Revisão do Projeto:").grid(row=4, sticky=ctk.W, padx=25)  # Cria um CTkLabel
     EA2 = ctk.CTkEntry(janela, textvariable=var2, width=200, fg_color="white", text_color="blue")  # cria um input box e salva o que o usuário digitou
     EA2.insert(0, "A")  # placeholder 0A
     EA2.grid(row=4, column=1, sticky=ctk.W)
 
-    ctk.CTkLabel(janela, text="KM do Ativo:").grid(row=5, sticky=ctk.W)  # Cria um CTkLabel
+    ctk.CTkLabel(janela, text="KM do Ativo:").grid(row=5, sticky=ctk.W, padx=25)  # Cria um CTkLabel
     EA3 = ctk.CTkEntry(janela, textvariable=var3, width=200, fg_color="white", text_color="blue")  # cria um input box e salva o que o usuário digitou
     EA3.grid(row=5, column=1, sticky=ctk.W)
 
-    ctk.CTkLabel(janela, text="Número de Projeto:").grid(row=6, sticky=ctk.W)  # Cria um CTkLabel
+    ctk.CTkLabel(janela, text="Número de Projeto:").grid(row=6, sticky=ctk.W, padx=25)  # Cria um CTkLabel
     EA4 = ctk.CTkEntry(janela, textvariable=var4, width=200, fg_color="white", text_color="blue")  # cria um input box e salva o que o usuário digitou
     EA4.grid(row=6, column=1, sticky=ctk.W)
 
-    ctk.CTkLabel(janela, text="Renomear Texto:").grid(row=7, sticky=ctk.W)  # Cria um CTkLabel
+    ctk.CTkLabel(janela, text="Renomear Texto:").grid(row=7, sticky=ctk.W, padx=25)  # Cria um CTkLabel
     EA5 = ctk.CTkEntry(janela, textvariable=var5, width=200, fg_color="white", text_color="blue")  # cria um input box e salva o que o usuário digitou
     EA5.grid(row=7, column=1, sticky=ctk.W)
 
-    ctk.CTkLabel(janela, text="KM da PN:").grid(row=2, column=2, sticky=ctk.W)  # Cria um CTkLabel
+    ctk.CTkLabel(janela, text="KM da PN:").grid(row=3, column=2, sticky=ctk.W, padx=25)  # Cria um CTkLabel
     EB1 = ctk.CTkEntry(janela, textvariable=var1B, width=200, fg_color="white", text_color="blue")  # cria um input box e salva o que o usuário digitou
-    EB1.grid(row=2, column=3, sticky=ctk.W)
+    EB1.grid(row=3, column=3, sticky=ctk.W)
 
-    ctk.CTkLabel(janela, text="Revisão do Projeto:").grid(row=4, column=2, sticky=ctk.W)  # Cria um CTkLabel
+    ctk.CTkLabel(janela, text="Revisão do Projeto:").grid(row=4, column=2, sticky=ctk.W, padx=25)  # Cria um CTkLabel
     EB2 = ctk.CTkEntry(janela, textvariable=var2B, width=200, fg_color="white", text_color="blue")  # cria um input box e salva o que o usuário digitou
     EB2.grid(row=4, column=3, sticky=ctk.W)
 
-    ctk.CTkLabel(janela, text="KM do Ativo:").grid(row=5, column=2, sticky=ctk.W)  # Cria um CTkLabel
+    ctk.CTkLabel(janela, text="KM do Ativo:").grid(row=5, column=2, sticky=ctk.W, padx=25)  # Cria um CTkLabel
     EB3 = ctk.CTkEntry(janela, textvariable=var3B, width=200, fg_color="white", text_color="blue")  # cria um input box e salva o que o usuário digitou
     EB3.grid(row=5, column=3, sticky=ctk.W)
 
-    ctk.CTkLabel(janela, text="Número de Projeto:").grid(row=6, column=2, sticky=ctk.W)  # Cria um CTkLabel
+    ctk.CTkLabel(janela, text="Número de Projeto:").grid(row=6, column=2, sticky=ctk.W, padx=25)  # Cria um CTkLabel
     EB4 = ctk.CTkEntry(janela, textvariable=var4B, width=200, fg_color="white", text_color="blue")  # cria um input box e salva o que o usuário digitou
     EB4.grid(row=6, column=3, sticky=ctk.W)
 
-    ctk.CTkLabel(janela, text="Renomear Texto:").grid(row=7, column=2, sticky=ctk.W)  # Cria um CTkLabel
+    ctk.CTkLabel(janela, text="Renomear Texto:").grid(row=7, column=2, sticky=ctk.W, padx=25)  # Cria um CTkLabel
     EB5 = ctk.CTkEntry(janela, textvariable=var5B, width=200, fg_color="white", text_color="blue")  # cria um input box e salva o que o usuário digitou
     EB5.grid(row=7, column=3, sticky=ctk.W)
 
@@ -195,16 +192,19 @@ for newFiles in range(len(newFullNamesArray)):
         conteudo = f.read()
 
     if firstProj:
-        novo_conteudo = conteudo.replace("PN KM XXX+XXX", f"PN KM {LCMilePost}").replace("KM YYY+YYY",
-                                                                                         f"KM {HouseKM}").replace(
-            "  A  ", f"  {rev}  ").replace("J-00000 ", f"J-{project_number} ").replace("CIDADE", f"{text}")
+        novo_conteudo = (conteudo.replace("PN KM XXX+XXX", f"PN KM {LCMilePost}")
+                         .replace("KM YYY+YYY",f"KM {HouseKM}")
+                         .replace("  A  ", f"  {rev}  ")
+                         .replace("J-00000 ", f"J-{project_number} ")
+                         .replace("CIDADE", f"{text}"))
         with open(newFullFileName, 'w', encoding="utf8") as f:
             f.write(novo_conteudo)
     else:
-        novo_conteudo = conteudo.replace(f"PN KM {LCMilePost}", f"PN KM {LCMilePostB}").replace(f"KM {HouseKM}",
-                                                                                                f"KM {HouseKMB}").replace(
-            f"  {rev}  ", f"  {revB}  ").replace(f"J-{project_number} ", f"J-{project_numberB} ").replace(f"{text}",
-                                                                                                          f"{textB}")
+        novo_conteudo = (conteudo.replace(f"PN KM {LCMilePost}", f"PN KM {LCMilePostB}")
+                         .replace(f"KM {HouseKM}",f"KM {HouseKMB}")
+                         .replace(f"  {rev}  ", f"  {revB}  ")
+                         .replace(f"J-{project_number} ", f"J-{project_numberB} ")
+                         .replace(f"{text}", f"{textB}"))
         with open(newFullFileName, 'w', encoding="utf8") as f:
             f.write(novo_conteudo)
 
